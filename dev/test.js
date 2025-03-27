@@ -19,7 +19,7 @@ import CSV from "/src/csv.js";
         ["1", "2", "3", "4", "5"],
         ["1", "2", "3", "4", "5"]
     ];
-    res = CSV.toCSV(testString, ",");
+    res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");
@@ -33,7 +33,7 @@ import CSV from "/src/csv.js";
         ["1", "", "2", "", "3", "", "4", "", "5"],
         ["1", "", "2", "", "3", "", "4", "", "5"]
     ];
-    res = CSV.toCSV(testString, ",");
+    res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");
@@ -47,7 +47,7 @@ import CSV from "/src/csv.js";
         ["1", "2", "3", "4", "5"],
         ["1", "2", "3", "4", "5"]
     ];
-    res = CSV.toCSV(testString, ",,");
+    res = CSV.toArray(testString, ",,");
     resInvert = CSV.toString(res, ",,");
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");
@@ -62,7 +62,7 @@ import CSV from "/src/csv.js";
         ["1", "2", "3", "4"],
         ["1", "2", "3", "4", "5"]
     ];
-    res = CSV.toCSV(testString, ",");
+    res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");
@@ -77,7 +77,7 @@ import CSV from "/src/csv.js";
         ["1", "test->\"<-quote"],
         ["2", "test->\"\"<-doublequote"],
     ];
-    res = CSV.toCSV(testString, ",");
+    res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
     console.log(resInvert);
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
@@ -92,7 +92,7 @@ import CSV from "/src/csv.js";
         ["1", "test->,<-quote"],
         ["2", "test->,,<-doublequote"],
     ];
-    res = CSV.toCSV(testString, ",");
+    res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");

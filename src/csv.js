@@ -4,7 +4,7 @@ const regExpEscape = function (str) {
     return str.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
-const toCSV = function(str, sep=",") {
+const toArray = function(str, sep=",") {
     const sepRegExp = regExpEscape(sep);
     const result = [];
     //const pattern = /(\,|\r?\n|\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^\,\r\n]*))/gi;
@@ -61,6 +61,7 @@ const toString = function(arr, sep=",") {
 };
 
 export default {
-	toCSV,
-    toString
+    toArray,
+	toString
+    
 };
