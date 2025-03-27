@@ -1,4 +1,4 @@
-# easy-communicator
+# easy-csv
 
 Small JavaScript library to help the conversion between CSV string and 2D array.
 
