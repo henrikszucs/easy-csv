@@ -79,7 +79,6 @@ import CSV from "/src/csv.js";
     ];
     res = CSV.toArray(testString, ",");
     resInvert = CSV.toString(res, ",");
-    console.log(resInvert);
     if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
         throw new Error("Unexpected");
     }
@@ -98,5 +97,37 @@ import CSV from "/src/csv.js";
         throw new Error("Unexpected");
     }
     console.log("Test 6... done");
+
+
+    // Test empty lines CSV
+    console.log("Test 7...");
+    testString = `1,"test->,<-quote"\n\n\n2,"test->,,<-doublequote"`;
+    testResult = [
+        ["1", "test->,<-quote"],
+        [""],
+        [""],
+        ["2", "test->,,<-doublequote"],
+    ];
+    res = CSV.toArray(testString, ",");
+    resInvert = CSV.toString(res, ",");
+    if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
+        throw new Error("Unexpected");
+    }
+    console.log("Test 7... done");
+
+
+    // Test quoted newlines CSV
+    console.log("Test 8...");
+    testString = `1,"test->,<-quote\n\n"\n2,"test->,,<-doublequote"`;
+    testResult = [
+        ["1", "test->,<-quote\n\n"],
+        ["2", "test->,,<-doublequote"],
+    ];
+    res = CSV.toArray(testString, ",");
+    resInvert = CSV.toString(res, ",");
+    if (compatreArrays(res, testResult) === false || compatreArrays(resInvert, testString) === false) {
+        throw new Error("Unexpected");
+    }
+    console.log("Test 8... done");
 
 })();
