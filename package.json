@@ -1,0 +1,30 @@
+{
+    "name": "easy-csv",
+    "version": "0.0.1",
+    "description": "Small package to help conversion between CSV string and 2D array.",
+    "keywords": [
+        "javascript",
+        "csv",
+		"tsv",
+		"conversion"
+    ],
+    "license": "GPL-2.0 license",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/henrikszucs/easy-csv"
+    },
+    "bugs": "https://github.com/henrikszucs/easy-csv/issues",
+    "maintainers": [
+        {
+            "name": "Henrik Szucs",
+            "email": "henrikszucs6@gmail.com"
+        }
+    ],
+    "scripts": {
+        "dev-server": "node dev/dev-server.js"
+    },
+    "type": "module",
+    "exports": {
+        ".": "./src/csv.js"
+    }
+}
