@@ -62,6 +62,5 @@ const toString = function(arr, sep=",") {
 
 export default {
     toArray,
-	toString
-    
+    toString
 };
